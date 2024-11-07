@@ -63,7 +63,7 @@ public class Graph {
             for (String node2 : nodes.keySet()) {
                 if (node1.equals(node2)) {
                     distances.get(node1).put(node2, 0);
-                } else {
+                } else {    
                     distances.get(node1).put(node2, Integer.MAX_VALUE);
                 }
             }
@@ -97,8 +97,5 @@ public class Graph {
             this.node = node;
             this.distance = distance;
         }
-    }
-
-    public void removeNode(String nodeName) {
     }
 }

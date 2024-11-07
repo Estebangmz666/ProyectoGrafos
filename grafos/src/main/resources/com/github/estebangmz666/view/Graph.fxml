@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.github.estebangmz666.controller.GraphController"
->
+<BorderPane fx:id="mainPane" prefHeight="455.0" prefWidth="622.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.github.estebangmz666.controller.GraphController">
     <left>
-        <VBox spacing="10" alignment="CENTER">
-            <TextField fx:id="nodeNameField" promptText="Nombre del nodo" />
-            <TextField fx:id="edgeWeightField" promptText="Peso de la arista" />
-            <Button text="Agregar Nodo" onAction="#handleAddNode" />
-            <Button text="Agregar Arista" onAction="#enableAddEdgeMode" />
-            <Button text="Dijkstra" onAction="#handleDijkstra" />
-            <Button text="Floyd-Warshall" onAction="#handleFloydWarshall" />
-            <Label fx:id="messageLabel" text="Bienvenido!"/>
+        <VBox alignment="CENTER" prefHeight="455.0" prefWidth="132.0" spacing="10" style="-fx-background-color: #fffff;">
+            <Label fx:id="messageLabel" text="Bienvenido!">
+            <font>
+               <Font size="22.0" />
+            </font></Label>
+            <TextField fx:id="nodeNameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" promptText="Nodo" style="-fx-background-color: tranparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+            <font>
+               <Font size="11.0" />
+            </font></TextField>
+            <TextField fx:id="edgeWeightField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" promptText="Peso" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent;" />
+            <Button onAction="#handleAddNode" style="-fx-background-color: #0598ff;" text="Agregar Nodo" textFill="WHITE" />
+            <Button onAction="#enableAddEdgeMode" style="-fx-background-color: #0598ff;" text="Agregar Arista" textFill="WHITE" />
+            <Button onAction="#handleDijkstra" style="-fx-background-color: #0598ff;" text="Dijkstra" textFill="WHITE" />
+            <Button onAction="#handleFloydWarshall" style="-fx-background-color: #0598ff;" text="Floyd-Warshall" textFill="WHITE" />
         </VBox>
     </left>
     <center>
-        <Pane fx:id="graphPane" prefWidth="400" prefHeight="400" style="-fx-background-color: lightgray;" />
+        <Pane fx:id="graphPane" prefHeight="400" prefWidth="400" style="-fx-background-color: lightgray;" />
     </center>
 </BorderPane>
